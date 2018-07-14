@@ -8,8 +8,7 @@
             <Label class="titulo" text="LECTOR DE OFICIOS" />
             <Button class="buttonQr" text="Leer Qr de oficio" @tap="scanBarcode" textWrap="false" />
             <Button class="buttonQr" text="Cargar Estados" @tap="getEstados" textWrap="false" />
-            <Label v-if="qr==1" class="verifiedQr" text="No se ha leido ningun qr" />
-            <Label v-if="qr!='' && qr!=1" class="verifiedQr" :text="'Se ha obtenido codigo qr con éxito ' + qr" />
+            <Label textWrap="true" v-if="qrr!=''" class="verifiedQr" :text="mensajeQr" />
         </FlexboxLayout>
     </Page>
 </template>
@@ -24,6 +23,7 @@
         data() {
             return {
                 qr: '',
+                mensajeQr:'',
                 estados: ''
             }
         },
@@ -51,6 +51,7 @@
                     torchOn: false, // launch with the flashlight on (default false)
                     closeCallback: function() {
                         self.qr = 1
+                        self.mensajeQr = "No se ha leido ningun qr"
                         console.log("Scanner closed");
                     }, // invoked when the scanner was closed (success or abort)
                     resultDisplayDuration: 500, // Android only, default 1500 (ms), set to 0 to disable echoing the scanned text
@@ -61,9 +62,10 @@
                         console.log("Scan format: " + result.format);
                         console.log("Scan text:   " + result.text);
                         self.qr = result.text
+                        self.mensajeQr = "Se ha leido el codigo qr éxitosamente " + self.qr
                     },
                     function(error) {
-                        self.qr = 1
+                        self.mensajeQr = "Hubo un error al leer el qr"
                         console.log("No scan: " + error);
                     }
                 );
