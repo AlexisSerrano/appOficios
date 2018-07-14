@@ -1,17 +1,21 @@
 import Vue from 'nativescript-vue';
 import Vuex from 'vuex';
 
-import counter from './modules/counter';
+// import counter from './modules/counter';
 
 Vue.use(Vuex);
 
 const debug = process.env.NODE_ENV !== 'production';
 
 const store = new Vuex.Store({
-  modules: {
-    counter,
+  state: {
+    estados: ''
   },
-  strict: debug,
+  mutations: {
+    asignarEstados(state, payload) {
+      state.estados = payload;
+    }
+  }
 });
 
 Vue.prototype.$store = store;

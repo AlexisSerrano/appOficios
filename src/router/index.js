@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 import Home from '../components/Home';
 import HelloWorld from '../components/HelloWorld';
 import Counter from '../components/Counter';
-import Oficios from '../components/Oficios';
+import Estados from '../components/Estados';
 
 const router = new VueRouter({
   pageRouting: true,
@@ -19,10 +19,10 @@ const router = new VueRouter({
       },
     },
     {
-      path: '/oficios',
-      component: Oficios,
+      path: '/estados',
+      component: Estados,
       meta: {
-        title: 'Oficios',
+        title: 'Estados',
       },
     },
     {
