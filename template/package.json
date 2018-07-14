@@ -1,0 +1,20 @@
+{
+  "name": "fge-oficios",
+  "description": "aplicacón desarrollada para la lectura de oficios generados en la fiscalía general del estado de veracruz",
+  "license": "MIT",
+  "readme": "fge-oficios",
+  "nativescript": {
+    "id": "fgeveracruz.oficios"
+  },
+  "dependencies": {
+    "nativescript-theme-core": "^1.0.4",
+    "nativescript-vue": "^1.3.1",
+    "tns-core-modules": "~3.4.1"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11"
+  }
+}
