@@ -4,9 +4,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import Home from '../components/Home';
-import HelloWorld from '../components/HelloWorld';
-import Counter from '../components/Counter';
-import Estados from '../components/Estados';
+import Oficios from '../components/Oficios';
 
 const router = new VueRouter({
   pageRouting: true,
@@ -19,26 +17,14 @@ const router = new VueRouter({
       },
     },
     {
-      path: '/estados',
-      component: Estados,
+      path: '/oficios/:token',
+      component: Oficios,
+      name: 'oficios',
       meta: {
-        title: 'Estados',
+        title: 'Oficios',
       },
     },
-    {
-      path: '/hello',
-      component: HelloWorld,
-      meta: {
-        title: 'Hello World',
-      },
-    },
-    {
-      path: '/counter',
-      component: Counter,
-      meta: {
-        title: 'Counter',
-      },
-    },
+
     {path: '*', redirect: '/home'},
   ],
 });
