@@ -24,7 +24,7 @@
     export default {
         data() {
             return {
-                token: 'este es el token'
+                token:''
             }
         },
         methods: {
@@ -43,7 +43,7 @@
                     function(result) {
                         self.token = result.text
                         setTimeout(function() {
-                            TNSFancyAlert.showSuccess('Qr Correcto', 'Se ha leido el código QR éxitosamente. ' + self.token, 'Ver oficio').then(() => {
+                            TNSFancyAlert.showSuccess('Qr Correcto', 'Se ha leido el código QR éxitosamente.', 'Ver oficio').then(() => {
                                 self.$router.push({
                                     name: 'oficios',
                                     params: {
@@ -57,7 +57,7 @@
                         console.log(self.token)
                         if (self.token == '') {
                             setTimeout(function() {
-                                TNSFancyAlert.showInfo('No se ha leido ningun qr. ', 'Intentelo de nuevo', 'Entendido').then(() => {
+                                TNSFancyAlert.showInfo('Intentalo de nuevo ', 'No se ha leido ningun codigo QR.', 'Entendido').then(() => {
                                     return
                                 })
                             }, 1000);
