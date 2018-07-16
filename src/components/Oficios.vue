@@ -5,7 +5,7 @@
     </ActionBar>
 
     <StackLayout>
-        <WebView :src="token" />
+        <WebView :src="url" />
     </StackLayout>
 
   </Page>
@@ -15,11 +15,11 @@
 export default {
   data() {
     return {
-      token: ''
+      url: ''
     }
   },
   created(){
-    this.token = this.$route.params.token
+    this.url = `http://sistemas.fiscaliaveracruz.gob.mx/uat/public/getOficiosApp/${this.$route.params.token}`
   }
 }
 </script>

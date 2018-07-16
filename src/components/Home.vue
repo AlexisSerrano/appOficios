@@ -29,6 +29,7 @@
         },
         methods: {
             scanBarcode() {
+                this.token=''
                 var self = this
                 barcodescanner.scan({
                     formats: "QR_CODE",
